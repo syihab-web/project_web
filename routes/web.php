@@ -17,7 +17,13 @@ Route::get('/', function () {
 Route::get('/pandemic', function(){
     return view('pandemic');
 });
+Route::get('/defend', function(){
+    return view('avoid');
+});
 
+Route::get('/infected', function(){
+    return view('infected');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

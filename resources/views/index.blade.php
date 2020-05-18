@@ -71,7 +71,7 @@
                 <p>2020 - 20??</p>
               </div>
               <div class="hero">
-                <a href="./infected.html">
+                <a href="{{ url('/infected') }}">
                   <img class="model-left" src="./img/total_confirmed-left.png" alt="model" />
                   <img
                     class="model-right"
@@ -88,7 +88,7 @@
                 <p></p>
               </div>
               <div class="hero">
-                <a href="./defend.html">
+                <a href="{{ url('/defend') }}">
                   <img class="model-left" src="./img/corona-protect-left.png" alt="model" />
                   <img
                     class="model-right"

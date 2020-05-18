@@ -42,10 +42,10 @@
                             <div class="main-menu d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="{{ route('home') }}">home</a></li>
-                                        <li><a href="about.html">Pandemic</a></li>
-                                        <li><a href="project.html">Infected</a></li>
-                                        <li><a href="service.html">Defend</a></li>
+                                        <li><a href="{{ url('/') }}">home</a></li>
+                                        <li><a href="{{ url('/pandemic') }}">Pandemic</a></li>
+                                        <li><a href="{{ url('/infected') }}">Infected</a></li>
+                                        <li><a href="{{ url('/defend') }}">Defend</a></li>
                                         <li class="nav-item">
                                             <form action="">
                                             <div class="input-group">
