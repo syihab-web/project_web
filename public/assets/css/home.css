@@ -144,7 +144,7 @@ nav {
 .banner {
   height: 50vh;
   width: 100%;
-  position: relative;
+  position: absolute;
 }
 .banner img {
   height: 100%;

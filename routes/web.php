@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/pandemic', function(){
+    return view('pandemic');
+});
 
 Auth::routes();
 

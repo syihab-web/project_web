@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{!! asset('assets/css/home.css')!!}">
 </head>
 <body>
+  
     <div class="portofolio">
         <header>
           <nav>
@@ -49,7 +50,7 @@
                 <p>14 Century <br> 21 Century</p>
               </div>
               <div class="hero">
-                <a href="./pandemic.html">
+                <a href="{{ url('/pandemic') }}">
                   <img
                     class="model-left"
                     src="./img/pandemic-left.png"
