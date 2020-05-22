@@ -1,0 +1,168 @@
+@font-face {
+    font-family: PopLight;
+    src: url("../font/Poppins-Light.ttf");
+  }
+  @font-face {
+    font-family: PopRegular;
+    src: url("../font/Poppins-Regular.ttf");
+  }
+.row{
+    width: 100%;
+}
+.header-area{
+    width: 100%;
+}
+.main-menu nav{
+    
+    padding-top: 0.1vh;
+}
+li{
+    display: inline-block;
+    position: relative;
+
+}
+
+#sticky-header{
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.3);
+   
+    background-color: rgba(21, 21, 21, 1);
+    
+  
+    left: 0;
+    right: 0;
+  
+    
+  
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.3);
+   
+    color: #ffffff;
+}
+
+a{
+    color: #ffffff;
+    text-transform: capitalize;
+    font-weight: 400;
+    display: inline-block;
+    padding: 35px 20px 35px 23px;
+    font-family: PopRegular ;
+    position: relative;
+    text-shadow: rgba(0, 0, 0, 0.3 );
+   
+    
+}
+a:hover{
+    color: #808080;
+}
+
+i{
+    font-size: 9px;
+    
+}
+
+.main-menu ul li a{
+    text-decoration: none;
+}
+
+
+.main-menu ul li:hover > .submenu{
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+.main-menu ul li:hover > a::before{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.login{
+    padding-bottom: 12px;
+    text-decoration: none;
+
+}
+
+.login a{
+    width: 150px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.boxed-btn{
+    width: 10px;
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #131313;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #131313;
+    text-transform: uppercase;
+    transform: 3s;
+}
+
+.boxed-btn:hover{
+    background: #131313;
+}
+
+
+
+.title a{
+    text-decoration: none;
+}
+
+a:-webkit-any-link{
+    cursor: pointer;
+    
+}
+
+.nav-item {
+    padding-left: 300px;
+    padding-top: px;
+}
+
+.footer_bg{
+    background-color: #ffffff;
+}
+
+.footer_top{
+    padding: 150px 150px;
+}
+
+.social_links{
+    margin-top: 45px;
+}
+
+.social_links li{
+    display: inline-block;
+}
+
+.social_links li a{
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 0, 0);
+    font-size: 15px;
+    color: #ffffff;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    margin-right: 9px;
+}
+
+
+
+.boxed-btn2{
+    width: 220px;
+    text-align: center;
+}
+
+footer{
+    background-color: white;
+    
+}
+footer p{
+    font-family: PopRegular ;
+    padding-top: 20px;
+    text-align: center;
+    letter-spacing: 8px;
+    color: black;
+}
