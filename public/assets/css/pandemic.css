@@ -40,7 +40,7 @@ body{
   font-size: 32px;
   font-style: bold;
   color: white;
-  padding-top: 20vh;
+  padding-top: 10vh;
 
 }
 
@@ -236,4 +236,17 @@ padding-bottom: 10px;
     letter-spacing: 9px;
     margin-bottom: -40px;
   }
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+::-webkit-scrollbar-track{
+  border: 7px solid #ffffff;
+  box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(45deg, #6a7070, #3b4269);
 }

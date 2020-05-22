@@ -19,6 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="{{URL('assets/js/bootstrap.min.js')}}" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{URL('assets/css/bootstrap.min.css')}}"  crossorigin="anonymous">
+    <link rel="stylesheet" href="{{URL('assets/css/fontawesome.min.css')}}"  crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -47,14 +48,7 @@
                                         <li><a href="{{ url('/infected') }}">Infected</a></li>
                                         <li><a href="{{ url('/defend') }}">Defend</a></li>
                                         <li class="nav-item">
-                                            <form action="">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Search..." aria-label="Search with two button addons" aria-describedby="button-addon4">
-                                                <div class="input-group-append" id="button-addon4">
-                                                  <button class="btn btn-outline-secondary" type="button">Search</button>
-                                                </div>
-                                              </div>
-                                            </form>
+
                                         </li>
                                     </ul>
                                 </nav>
