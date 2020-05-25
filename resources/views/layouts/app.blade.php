@@ -46,30 +46,34 @@
                                         <li><a href="{{ url('/pandemic') }}">Pandemic</a></li>
                                         <li><a href="{{ url('/infected') }}">Infected</a></li>
                                         <li><a href="{{ url('/defend') }}">Defend</a></li>
-                                        <li class="nav-item">
-                                            <form action="">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Search..." aria-label="Search with two button addons" aria-describedby="button-addon4">
-                                                <div class="input-group-append" id="button-addon4">
-                                                  <button class="btn btn-outline-secondary" type="button">Search</button>
-                                                </div>
-                                              </div>
-                                            </form>
+                                        <li><a href="{{ url('/country') }}">Country</a></li>
+                                        <li>
+                                            <div class="login">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      Account
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                      <a class="dropdown-item" href="#">Login</a>
+                                                      <a class="dropdown-item" href="#">Register</a>
+                                                    </div>
+                                                  </div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </nav>
-                                
                             </div>
                         </div>
-                       
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                            <div class="login">
-                                <a href="#" class="boxed-btn">Login</a>
-                                <a href="#" class="boxed-btn">Register</a>
-                            </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block ">
+                            <form action="/search" method="get">
+                                <div class="input-group">
+                                    <input type="text" name="search" class="form-control" placeholder="Search..." aria-label="Search with two button addons" aria-describedby="button-addon4">
+                                    <div class="input-group-append" id="button-addon4">
+                                      <button class="btn btn-outline-secondary" type="submit">Search</button>
+                                    </div>
+                                  </div>
+                              </form>
                         </div>
-                       
-                        
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>

@@ -30,6 +30,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/provinsi', 'ProvinsiController@index');
+//Country
+//Route::get('/country', 'CountryController@index');
+//Route::get('/country/create', 'CountryController@create');
+//Route::post('/country', 'CountryController@store');
+//Route::delete('/{country}', 'CountryController@destroy');
+//Route::get('/{country}/edit', 'CountryController@edit');
+//Route::patch('/country/{country}', 'CountryController@update');
+Route::resource('country', 'CountryController');
+Route::get('/search', 'CountryController@search');
+
+//User Benua
+
 

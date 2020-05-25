@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?php echo asset('assets/css/home.css'); ?>">
 </head>
 <body>
+  
     <div class="portofolio">
         <header>
           <nav>
@@ -30,10 +31,6 @@
                 <p>Fajar Sidiq Arrizal <br>
                   Hanif Abyan Ayyasyi <br>
                   Muhammad Syihabudin Al-Khatami</p>
-                    <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
-                <?php if(Route::has('register')): ?>
-                    <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
-                <?php endif; ?>
               </div>
               <div class="social">
                 <h3>Social</h3>
@@ -53,7 +50,7 @@
                 <p>14 Century <br> 21 Century</p>
               </div>
               <div class="hero">
-                <a href="./pandemic.html">
+                <a href="<?php echo e(url('/pandemic')); ?>">
                   <img
                     class="model-left"
                     src="./img/pandemic-left.png"
@@ -74,7 +71,7 @@
                 <p>2020 - 20??</p>
               </div>
               <div class="hero">
-                <a href="./infected.html">
+                <a href="<?php echo e(url('/infected')); ?>">
                   <img class="model-left" src="./img/total_confirmed-left.png" alt="model" />
                   <img
                     class="model-right"
@@ -87,11 +84,11 @@
             <section class="page defend">
               <div class="details">
                 <h1>Defend</h1>
-                <h2>Avoid <br> the Virus</h2>
+                <h2>Avoid the Virus</h2>
                 <p></p>
               </div>
               <div class="hero">
-                <a href="./defend.html">
+                <a href="<?php echo e(url('/defend')); ?>">
                   <img class="model-left" src="./img/corona-protect-left.png" alt="model" />
                   <img
                     class="model-right"
