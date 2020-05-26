@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('auth.login');
 });
 Route::get('/pandemic', function(){
     return view('pandemic');
@@ -20,15 +20,9 @@ Route::get('/pandemic', function(){
 Route::get('/defend', function(){
     return view('avoid');
 });
-
-Route::get('/infected', function(){
-    return view('infected');
-});
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
+Route::get('/home', 'HomeController@index')->name('index');
 
 //Country
 //Route::get('/country', 'CountryController@index');
@@ -41,5 +35,6 @@ Route::resource('country', 'CountryController');
 Route::get('/search', 'CountryController@search');
 
 //User Benua
-
+Route::get('/infected', 'InfectedController@index');
+Route::get('/searchEurope', 'InfectedController@searchEurope');
 

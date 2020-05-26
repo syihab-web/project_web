@@ -19,6 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="{{URL('assets/js/bootstrap.min.js')}}" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{URL('assets/css/bootstrap.min.css')}}"  crossorigin="anonymous">
+    <link rel="stylesheet" href="{{URL('assets/css/fontawesome.min.css')}}"  crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
@@ -39,40 +40,52 @@
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-3">
-                            <div class="main-menu d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="{{ url('/') }}">home</a></li>
-                                        <li><a href="{{ url('/pandemic') }}">Pandemic</a></li>
-                                        <li><a href="{{ url('/infected') }}">Infected</a></li>
-                                        <li><a href="{{ url('/defend') }}">Defend</a></li>
-                                        <li><a href="{{ url('/country') }}">Country</a></li>
-                                        <li>
-                                            <div class="login">
-                                                <div class="dropdown">
-                                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                      Account
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                      <a class="dropdown-item" href="#">Login</a>
-                                                      <a class="dropdown-item" href="#">Register</a>
-                                                    </div>
-                                                  </div>
-                                            </div>
-                                        </li>
+                    <div class="main-menu d-none d-lg-block">
+                    <nav>
+                        <ul id="navigation">
+                         @guest
+                         <li>
+                            <div class="login">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Account
+                                    </button>
+                                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                                        <a class="" href="{{ route('login') }}">Login</a>
+                                        @if (Route::has('register'))
+                                         <a class="" href="{{ route('register') }}">Register</a>
+                                      @endif
+                                    </div>
+                                  </div>
+                            </div>
+                        </li>
+                        @else
+                        <li><a href="{{ url('/') }}">home</a></li>
+                        <li><a href="{{ url('/pandemic') }}">Pandemic</a></li>
+                        <li><a href="{{ url('/infected') }}">Infected</a></li>
+                        <li><a href="{{ url('/defend') }}">Defend</a></li>
+                        <li><a href="{{ url('/country') }}">Country</a></li>
+                            <li class="dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
                                     </ul>
                                 </nav>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block ">
-                            <form action="/search" method="get">
-                                <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Search..." aria-label="Search with two button addons" aria-describedby="button-addon4">
-                                    <div class="input-group-append" id="button-addon4">
-                                      <button class="btn btn-outline-secondary" type="submit">Search</button>
-                                    </div>
-                                  </div>
-                              </form>
                         </div>
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
