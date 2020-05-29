@@ -25,12 +25,14 @@ body{
 }
 
 #box7{
-  height: 80vh;
+  height: auto;
   width: 100%;
   background-image: url(../../img/News_coronavirus_banner_1920x300.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
+
+
 
 #box7 h2{
   padding-bottom: 10px;
@@ -71,7 +73,7 @@ body{
   background-attachment: fixed;
 }
 #box4{
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-image: url(../../img/BG.jpg);
   background-size: cover;
@@ -80,7 +82,7 @@ body{
 }
 
 #box5{
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-size: cover;
   display: table;

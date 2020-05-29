@@ -21,7 +21,7 @@
         </div> --}}
         <div class="row" >
             <h1 >Europe</h1>
-            <div class="form-row">
+            <div class="form-row align-right search">
                 <div class="btn">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
                 </div>
@@ -49,8 +49,25 @@
            </tbody>
         </table>
 
-            {{ $eropa->links() }}
 
+
+       
+        <div id="container">
+            <ul>
+              <li><a href="#"><i class="fas fa-angle-left"></i></a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#"><i class="fas fa-angle-right"></i></a></li>
+            </ul>
+            
+            </div>
+         
+
+            {{-- {{ $eropa->links() }} --}}
+            <br>
     </div>
     <div class="scrollable">
 
@@ -66,13 +83,13 @@
         </div> --}}
         <div class="row" >
             <h1 >America</h1>
-            <div class="form-row">
+            <div class="form-row search2">
                 <div class="btn">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
                 </div>
-            <form action="/searchAmerica" method="GET">
-              <input type="text" class="form-control" name="searchAmerica" id="" aria-describedby="helpId" placeholder="Search...">
-            </form>
+                <form action="/searchAmerica" method="GET">
+                    <input type="text" class="form-control" name="searchAmerica" id="" aria-describedby="helpId" placeholder="Search...">
+                  </form>
             </div>
          </div>
         <table id="mytable" class="table table-dark">
@@ -110,7 +127,7 @@
         </div> --}}
         <div class="row" >
             <h1 >Africa</h1>
-            <div class="form-row">
+            <div class="form-row search3">
                 <div class="btn">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
                 </div>
@@ -156,7 +173,7 @@
         </div> --}}
         <div class="row" >
             <h1 >Asia</h1>
-            <div class="form-row">
+            <div class="form-row search4">
                 <div class="btn">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
                 </div>
@@ -173,7 +190,7 @@
            </thead>
            <tbody>
             @foreach ($asia as $asian)
-            <tr>
+            <tr> 
                 <td>{{ $asian->nama_negara }}</td>
                 <td>{{ $asian->jml_positif }}</td>
                 <td>{{ $asian->jml_sembuh }}</td>
@@ -187,7 +204,7 @@
 
     </div>
 
-
+ 
 
 
 </div>
