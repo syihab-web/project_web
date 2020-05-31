@@ -21,7 +21,7 @@
             <td><a href="<?php echo e(URL('country/create')); ?>" class="btn btn-success mr-4">Tambah</a></td>
             <td><form action="/search" method="get">
                 <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Search..." aria-label="Search with two button addons" aria-describedby="button-addon4">
+                    <input type="text" name="search" class="form-control" placeholder="Search country or continent ..." aria-label="Search with two button addons" aria-describedby="button-addon4">
                     <div class="input-group-append" id="button-addon4">
                       <button class="btn btn-outline-info" type="submit">Search</button>
                     </div>
@@ -44,9 +44,11 @@
         </tr>
         </thead>
         <tbody>
-        <?php $__currentLoopData = $country; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $negara): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+       <?php  $count = 1; ?>
+       <?php $__currentLoopData = $country; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $negara): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <tr>
-            <th scope="row"><?php echo e($loop->iteration); ?></th>
+            <th scope="row"><?php echo e($country->perPage()*($country->currentPage()-1)+$count); ?></th>
             <td><?php echo e($negara->nama_negara); ?></td>
             <td><?php echo e($negara->jml_positif); ?></td>
             <td><?php echo e($negara->jml_sembuh); ?></td>
@@ -60,6 +62,7 @@
                 </form>
             </td>
         </tr>
+        <?php $count++; ?>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>

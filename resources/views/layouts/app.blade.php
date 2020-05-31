@@ -35,7 +35,7 @@
                     <div class="row align-items-center justify-content-between no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="title">
-                                <a href="{{ url('/') }}">
+                                <a href="{{ url('/home') }}">
                                     <h4>The Covid Project</h3>
                                 </a>
                             </div>

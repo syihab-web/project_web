@@ -34,7 +34,7 @@
                     <div class="row align-items-center justify-content-between no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="title">
-                                <a href="<?php echo e(url('/')); ?>">
+                                <a href="<?php echo e(url('/home')); ?>">
                                     <h4>The Covid Project</h3>
                                 </a>
                             </div>
@@ -60,7 +60,7 @@
                             </div>
                         </li>
                         <?php else: ?>
-                        <li><a href="<?php echo e(url('/')); ?>">home</a></li>
+                        <li><a href="<?php echo e(url('/home')); ?>">home</a></li>
                         <li><a href="<?php echo e(url('/pandemic')); ?>">Pandemic</a></li>
                         <li><a href="<?php echo e(url('/infected')); ?>">Infected</a></li>
                         <li><a href="<?php echo e(url('/defend')); ?>">Defend</a></li>
