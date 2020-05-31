@@ -21,7 +21,7 @@
             <td><a href="{{ URL('country/create') }}" class="btn btn-success mr-4">Tambah</a></td>
             <td><form action="/search" method="get">
                 <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Search..." aria-label="Search with two button addons" aria-describedby="button-addon4">
+                    <input type="text" name="search" class="form-control" placeholder="Search country or continent ..." aria-label="Search with two button addons" aria-describedby="button-addon4">
                     <div class="input-group-append" id="button-addon4">
                       <button class="btn btn-outline-info" type="submit">Search</button>
                     </div>
@@ -44,9 +44,11 @@
         </tr>
         </thead>
         <tbody>
-        @foreach ($country as $negara)
+
+       <?php  $count = 1; ?>
+       @foreach ($country as $negara)
         <tr>
-            <th scope="row">{{ $loop->iteration }}</th>
+            <th scope="row">{{ $country->perPage()*($country->currentPage()-1)+$count }}</th>
             <td>{{ $negara->nama_negara }}</td>
             <td>{{ $negara->jml_positif }}</td>
             <td>{{ $negara->jml_sembuh }}</td>
@@ -60,6 +62,7 @@
                 </form>
             </td>
         </tr>
+        <?php $count++; ?>
         @endforeach
         </tbody>
     </table>

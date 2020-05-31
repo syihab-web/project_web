@@ -16,11 +16,11 @@ class InfectedController extends Controller
      */
     public function index()
     {
-        $eropa = Country::where('benua', '=', 'Eropa')->paginate(2);
-        $asia = Country::where('benua', '=', 'Asia')->paginate(2);
-        $amerika = Country::where('benua', '=', 'Amerika')->paginate(2);
-        $afrika = Country::where('benua', '=', 'Afrika')->paginate(2);
-        $australia = Country::where('benua', '=', 'Australia')->paginate(2);
+        $eropa = Country::where('benua', '=', 'Eropa')->orderBy('jml_positif', 'desc')->paginate(2);
+        $asia = Country::where('benua', '=', 'Asia')->orderBy('jml_positif', 'desc')->paginate(2);
+        $amerika = Country::where('benua', '=', 'Amerika')->orderBy('jml_positif', 'desc')->paginate(2);
+        $afrika = Country::where('benua', '=', 'Afrika')->orderBy('jml_positif', 'desc')->paginate(2);
+        $australia = Country::where('benua', '=', 'Australia')->orderBy('jml_positif', 'desc')->paginate(2);
 
         return view('infected', compact('eropa', 'asia', 'amerika', 'afrika', 'australia'));
     }
@@ -35,11 +35,66 @@ class InfectedController extends Controller
     {
         $eropa = Country::where('benua', '=', 'Eropa')->when($request->searchEurope, function ($query) use ($request) {
             $query->where('nama_negara', 'like', "%{$request->searchEurope}%");
-        })->paginate(2);
-        $asia = Country::where('benua', '=', 'Asia')->paginate(2);
-        $amerika = Country::where('benua', '=', 'Amerika')->paginate(2);
-        $afrika = Country::where('benua', '=', 'Afrika')->paginate(2);
-        $australia = Country::where('benua', '=', 'Australia')->paginate(2);
+        })->orderBy('jml_positif', 'desc')->paginate(2);
+        $asia = Country::where('benua', '=', 'Asia')->orderBy('jml_positif', 'desc')->paginate(2);
+        $amerika = Country::where('benua', '=', 'Amerika')->orderBy('jml_positif', 'desc')->paginate(2);
+        $afrika = Country::where('benua', '=', 'Afrika')->orderBy('jml_positif', 'desc')->paginate(2);
+        $australia = Country::where('benua', '=', 'Australia')->orderBy('jml_positif', 'desc')->paginate(2);
         return view('infected', compact('eropa', 'asia', 'amerika', 'afrika', 'australia'));
     }
+
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function searchAmerica(Request $request)
+    {
+        $amerika = Country::where('benua', '=', 'Amerika')->when($request->searchAmerica, function ($query) use ($request) {
+            $query->where('nama_negara', 'like', "%{$request->searchAmerica}%");
+        })->orderBy('jml_positif', 'desc')->paginate(2);
+        $asia = Country::where('benua', '=', 'Asia')->orderBy('jml_positif', 'desc')->paginate(2);
+        $eropa = Country::where('benua', '=', 'Eropa')->orderBy('jml_positif', 'desc')->paginate(2);
+        $afrika = Country::where('benua', '=', 'Afrika')->orderBy('jml_positif', 'desc')->paginate(2);
+        $australia = Country::where('benua', '=', 'Australia')->orderBy('jml_positif', 'desc')->paginate(2);
+        return view('infected', compact('eropa', 'asia', 'amerika', 'afrika', 'australia'));
+    }
+
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function searchAfrica(Request $request)
+    {
+        $afrika = Country::where('benua', '=', 'Afrika')->when($request->searchAfrica, function ($query) use ($request) {
+            $query->where('nama_negara', 'like', "%{$request->searchAfrica}%");
+        })->paginate(2);
+        $asia = Country::where('benua', '=', 'Asia')->orderBy('jml_positif', 'desc')->paginate(2);
+        $amerika = Country::where('benua', '=', 'Amerika')->orderBy('jml_positif', 'desc')->paginate(2);
+        $eropa = Country::where('benua', '=', 'Eropa')->orderBy('jml_positif', 'desc')->paginate(2);
+        $australia = Country::where('benua', '=', 'Australia')->orderBy('jml_positif', 'desc')->paginate(2);
+        return view('infected', compact('eropa', 'asia', 'amerika', 'afrika', 'australia'));
+    }
+
+     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function searchAsia(Request $request)
+    {
+        $asia = Country::where('benua', '=', 'Asia')->when($request->searchAsia, function ($query) use ($request) {
+            $query->where('nama_negara', 'like', "%{$request->searchAsia}%");
+        })->orderBy('jml_positif', 'desc')->paginate(2);
+        $eropa = Country::where('benua', '=', 'Eropa')->orderBy('jml_positif', 'desc')->paginate(2);
+        $amerika = Country::where('benua', '=', 'Amerika')->orderBy('jml_positif', 'desc')->paginate(2);
+        $afrika = Country::where('benua', '=', 'Afrika')->orderBy('jml_positif', 'desc')->paginate(2);
+        $australia = Country::where('benua', '=', 'Australia')->orderBy('jml_positif', 'desc')->paginate(2);
+        return view('infected', compact('eropa', 'asia', 'amerika', 'afrika', 'australia'));
+    }
+
 }

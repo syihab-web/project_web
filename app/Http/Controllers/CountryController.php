@@ -46,6 +46,9 @@ class CountryController extends Controller
         return view('country.index', compact('country'));
     }
 
+
+
+
     /**
      * Store a newly created resource in storage.
      *

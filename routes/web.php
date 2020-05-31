@@ -37,4 +37,7 @@ Route::get('/search', 'CountryController@search');
 //User Benua
 Route::get('/infected', 'InfectedController@index');
 Route::get('/searchEurope', 'InfectedController@searchEurope');
+Route::get('/searchAmerica', 'InfectedController@searchAmerica');
+Route::get('/searchAfrica', 'InfectedController@searchAfrica');
+Route::get('/searchAsia', 'InfectedController@searchAsia');
 

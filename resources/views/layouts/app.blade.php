@@ -34,7 +34,7 @@
                     <div class="row align-items-center justify-content-between no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="title">
-                                <a href="{{ url('/') }}">
+                                <a href="{{ url('/home') }}">
                                     <h4>The Covid Project</h3>
                                 </a>
                             </div>
@@ -60,7 +60,7 @@
                             </div>
                         </li>
                         @else
-                        <li><a href="{{ url('/') }}">home</a></li>
+                        <li><a href="{{ url('/home') }}">home</a></li>
                         <li><a href="{{ url('/pandemic') }}">Pandemic</a></li>
                         <li><a href="{{ url('/infected') }}">Infected</a></li>
                         <li><a href="{{ url('/defend') }}">Defend</a></li>
