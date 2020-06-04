@@ -24,6 +24,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('index');
 
+
 //Country
 //Route::get('/country', 'CountryController@index');
 //Route::get('/country/create', 'CountryController@create');
@@ -40,4 +41,7 @@ Route::get('/searchEurope', 'InfectedController@searchEurope');
 Route::get('/searchAmerica', 'InfectedController@searchAmerica');
 Route::get('/searchAfrica', 'InfectedController@searchAfrica');
 Route::get('/searchAsia', 'InfectedController@searchAsia');
+
+Route::get('/profile/{user}', 'ProfileController@show');
+Route::patch('/profile/{user}', 'ProfileController@update');
 

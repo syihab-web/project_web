@@ -77,11 +77,13 @@
                                         <?php echo e(__('Logout')); ?>
 
                                     </a>
-
+                                    <a class="dropdown-item" href="/profile/<?php echo e(Auth::user()->id); ?>">Edit Profile</a>
                                     <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
                                         <?php echo csrf_field(); ?>
                                     </form>
                                 </div>
+
+
                             </li>
                         <?php endif; ?>
                                     </ul>
