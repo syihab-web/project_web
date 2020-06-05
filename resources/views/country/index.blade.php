@@ -19,9 +19,9 @@
     <table>
         <tr>
             <td><a href="{{ URL('country/create') }}" class="btn btn-success mr-4">Tambah</a></td>
-            <td><form action="/search" method="get">
+            <td><form action="/search" method="get" autocomplete="off">
                 <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Search country or continent ..." aria-label="Search with two button addons" aria-describedby="button-addon4">
+                    <input type="text" name="search" class="form-control boxSearch" placeholder="Search country or continent ..." aria-label="Search with two button addons" aria-describedby="button-addon4">
                     <div class="input-group-append" id="button-addon4">
                       <button class="btn btn-outline-info" type="submit">Search</button>
                     </div>
@@ -43,7 +43,7 @@
             <th scope="col">Action</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="listSearch">
 
        <?php  $count = 1; ?>
        @foreach ($country as $negara)
@@ -68,5 +68,25 @@
     </table>
         {{ $country->links() }}
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function($){
+
+        $('.listSearch tr').each(function(){
+            $(this).attr('searchData', $(this).text().toLowerCase());
+        });
+        $('.boxSearch').on('keyup', function(){
+        var dataList = $(this).val().toLowerCase();
+            $('.listSearch tr').each(function(){
+                if ($(this).filter('[searchData *= ' + dataList + ']').length > 0 || dataList.length < 1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+
+    });
+</script>
 
 @endsection

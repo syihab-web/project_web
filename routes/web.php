@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    if(Auth::user()->roles == '1' || Auth::user()->roles == '2'){
+        return redirect()->back();
+    }
+    else{
+        return view('auth.login');
+    }
 });
 Route::get('/pandemic', function(){
     return view('pandemic');
@@ -33,6 +38,7 @@ Route::get('/home', 'HomeController@index')->name('index');
 //Route::patch('/country/{country}', 'CountryController@update');
 Route::resource('country', 'CountryController');
 Route::get('/search', 'CountryController@search');
+Route::get('/manage_user', 'CountryController@search');
 
 //User Benua
 Route::get('/infected', 'InfectedController@index');
@@ -40,4 +46,5 @@ Route::get('/searchEurope', 'InfectedController@searchEurope');
 Route::get('/searchAmerica', 'InfectedController@searchAmerica');
 Route::get('/searchAfrica', 'InfectedController@searchAfrica');
 Route::get('/searchAsia', 'InfectedController@searchAsia');
-
+Route::get('/profile/{user}', 'ProfileController@show');
+Route::patch('/profile/{user}', 'ProfileController@update');

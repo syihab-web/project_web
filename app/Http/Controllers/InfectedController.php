@@ -16,11 +16,11 @@ class InfectedController extends Controller
      */
     public function index()
     {
-        $eropa = Country::where('benua', '=', 'Eropa')->orderBy('jml_positif', 'desc')->paginate(2);
-        $asia = Country::where('benua', '=', 'Asia')->orderBy('jml_positif', 'desc')->paginate(2);
-        $amerika = Country::where('benua', '=', 'Amerika')->orderBy('jml_positif', 'desc')->paginate(2);
-        $afrika = Country::where('benua', '=', 'Afrika')->orderBy('jml_positif', 'desc')->paginate(2);
-        $australia = Country::where('benua', '=', 'Australia')->orderBy('jml_positif', 'desc')->paginate(2);
+        $eropa = Country::where('benua', '=', 'Eropa')->orderBy('jml_positif', 'desc')->paginate(20);
+        $asia = Country::where('benua', '=', 'Asia')->orderBy('jml_positif', 'desc')->paginate(20);
+        $amerika = Country::where('benua', '=', 'Amerika')->orderBy('jml_positif', 'desc')->paginate(20);
+        $afrika = Country::where('benua', '=', 'Afrika')->orderBy('jml_positif', 'desc')->paginate(20);
+        $australia = Country::where('benua', '=', 'Australia')->orderBy('jml_positif', 'desc')->paginate(20);
 
         return view('infected', compact('eropa', 'asia', 'amerika', 'afrika', 'australia'));
     }

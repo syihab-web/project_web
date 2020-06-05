@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Country;
 use App\Continent;
+use Illuminate\Support\Facades\Auth;
 
 class CountryController extends Controller
 {
@@ -13,10 +14,20 @@ class CountryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function __construct()
+    // {
+    //     $this->middleware('Admin');
+    // }
+
     public function index()
     {
         $country = Country::paginate(10);
-        return view('country.index', compact('country'));
+        if(Auth::user()->roles == '1'){
+            return view('country.index', compact('country'));
+        }
+        else{
+            return redirect()->back();
+        }
     }
 
     /**
@@ -58,7 +69,10 @@ class CountryController extends Controller
     public function store(Request $request)
     {
         $rule = [
-            'nama_negara' => 'unique:country'
+            'nama_negara' => 'unique:country',
+            'jml_positif' => 'numeric',
+            'jml_sembuh' => 'numeric',
+            'jml_meninggal' => 'numeric'
         ];
         $this->validate($request, $rule);
         $status = Country::create($request->all());

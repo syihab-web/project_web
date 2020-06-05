@@ -25,8 +25,8 @@
                 <div class="btn">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
                 </div>
-                <form action="/searchEurope" method="GET">
-                    <input type="text" class="form-control" name="searchEurope" id="" aria-describedby="helpId" placeholder="Search...">
+                <form action="/searchEurope" method="GET" autocomplete="off">
+                    <input type="text" class="form-control boxSearch-eur" name="searchEurope" id="" aria-describedby="helpId" placeholder="Search...">
                 </form>
             </div>
          </div>
@@ -37,7 +37,7 @@
                <th>Total Recovered</th>
                <th>Total Death</th>
            </thead>
-           <tbody>
+           <tbody class="listSearch-eur">
             @foreach ($eropa as $europe)
             <tr>
                 <td>{{ $europe->nama_negara }}</td>
@@ -70,8 +70,8 @@
                 <div class="btn">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
                 </div>
-            <form action="/searchAmerica" method="GET">
-              <input type="text" class="form-control" name="searchAmerica" id="" aria-describedby="helpId" placeholder="Search...">
+            <form action="/searchAmerica" method="GET" autocomplete="off">
+              <input type="text" class="form-control boxSearch-usa" name="searchAmerica" id="" aria-describedby="helpId" placeholder="Search...">
             </form>
             </div>
          </div>
@@ -82,7 +82,7 @@
                <th>Total Recovered</th>
                <th>Total Death</th>
            </thead>
-           <tbody>
+           <tbody class="listSearch-usa">
             @foreach ($amerika as $america)
             <tr>
                 <td>{{ $america->nama_negara }}</td>
@@ -114,8 +114,8 @@
                 <div class="btn">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
                 </div>
-                <form action="/searchAmerica" method="GET">
-                    <input type="text" class="form-control" name="searchAfrica" id="" aria-describedby="helpId" placeholder="Search...">
+                <form action="/searchAmerica" method="GET" autocomplete="off">
+                    <input type="text" class="form-control boxSearch-afc" name="searchAfrica" id="" aria-describedby="helpId" placeholder="Search...">
                 </form>
 
             </div>
@@ -127,7 +127,7 @@
                <th>Total Recovered</th>
                <th>Total Death</th>
            </thead>
-           <tbody>
+           <tbody class="listSearch-afc">
             @foreach ($afrika as $africa)
             <tr>
                 <td>{{ $africa->nama_negara }}</td>
@@ -162,8 +162,8 @@
                 <div class="btn">
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
                 </div>
-                <form action="/searchAmerica" method="GET">
-                    <input type="text" class="form-control" name="searchAsia" id="" aria-describedby="helpId" placeholder="Search...">
+                <form action="/searchAmerica" method="GET" autocomplete="off">
+                    <input type="text" class="form-control boxSearch-asia" name="searchAsia" id="" aria-describedby="helpId" placeholder="Search...">
                 </form>
 
             </div>
@@ -175,7 +175,7 @@
                <th>Total Recovered</th>
                <th>Total Death</th>
            </thead>
-           <tbody>
+           <tbody class="listSearch-asia">
             @foreach ($asia as $asian)
             <tr>
                 <td>{{ $asian->nama_negara }}</td>
@@ -188,6 +188,42 @@
         </table>
 
         {{ $asia->links() }}
+
+    </div>
+ </div>
+ <div class="scrollable">
+        <div class="row" >
+            <h1 >Australia</h1>
+            <div class="form-row">
+                <div class="btn">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
+                </div>
+                <form action="/searchAmerica" method="GET" autocomplete="off">
+                    <input type="text" class="form-control boxSearch-aus" name="searchAsia" id="" aria-describedby="helpId" placeholder="Search...">
+                </form>
+
+            </div>
+         </div>
+        <table id="mytable" class="table table-dark ">
+           <thead>
+               <th>Country</th>
+               <th>Total Cases</th>
+               <th>Total Recovered</th>
+               <th>Total Death</th>
+           </thead>
+           <tbody class="listSearch-aus">
+            @foreach ($australia as $ostrali)
+            <tr>
+                <td>{{ $ostrali->nama_negara }}</td>
+                <td>{{ $ostrali->jml_positif }}</td>
+                <td>{{ $ostrali->jml_sembuh }}</td>
+                <td>{{ $ostrali->jml_meninggal }}</td>
+            </tr>
+            @endforeach
+           </tbody>
+        </table>
+
+        {{ $australia->links() }}
 
     </div>
 
@@ -248,13 +284,100 @@
         })
     })
 </script> --}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function($){
 
+        $('.listSearch-afc tr').each(function(){
+            $(this).attr('searchData', $(this).text().toLowerCase());
+        });
+        $('.boxSearch-afc').on('keyup', function(){
+        var dataList = $(this).val().toLowerCase();
+            $('.listSearch-afc tr').each(function(){
+                if ($(this).filter('[searchData *= ' + dataList + ']').length > 0 || dataList.length < 1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
 
+    });
+</script>
+<script>
+    $(document).ready(function($){
 
+        $('.listSearch-eur tr').each(function(){
+            $(this).attr('searchData', $(this).text().toLowerCase());
+        });
+        $('.boxSearch-eur').on('keyup', function(){
+        var dataList = $(this).val().toLowerCase();
+            $('.listSearch-eur tr').each(function(){
+                if ($(this).filter('[searchData *= ' + dataList + ']').length > 0 || dataList.length < 1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
 
+    });
+</script>
+<script>
+    $(document).ready(function($){
 
+        $('.listSearch-asia tr').each(function(){
+            $(this).attr('searchData', $(this).text().toLowerCase());
+        });
+        $('.boxSearch-asia').on('keyup', function(){
+        var dataList = $(this).val().toLowerCase();
+            $('.listSearch-asia tr').each(function(){
+                if ($(this).filter('[searchData *= ' + dataList + ']').length > 0 || dataList.length < 1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
 
+    });
+</script>
+<script>
+    $(document).ready(function($){
 
+        $('.listSearch-usa tr').each(function(){
+            $(this).attr('searchData', $(this).text().toLowerCase());
+        });
+        $('.boxSearch-usa').on('keyup', function(){
+        var dataList = $(this).val().toLowerCase();
+            $('.listSearch-usa tr').each(function(){
+                if ($(this).filter('[searchData *= ' + dataList + ']').length > 0 || dataList.length < 1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
 
+    });
+</script>
+<script>
+    $(document).ready(function($){
 
+        $('.listSearch-aus tr').each(function(){
+            $(this).attr('searchData', $(this).text().toLowerCase());
+        });
+        $('.boxSearch-aus').on('keyup', function(){
+        var dataList = $(this).val().toLowerCase();
+            $('.listSearch-aus tr').each(function(){
+                if ($(this).filter('[searchData *= ' + dataList + ']').length > 0 || dataList.length < 1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+
+    });
+</script>
 @endsection

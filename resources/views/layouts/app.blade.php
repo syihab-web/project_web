@@ -64,7 +64,9 @@
                         <li><a href="{{ url('/pandemic') }}">Pandemic</a></li>
                         <li><a href="{{ url('/infected') }}">Infected</a></li>
                         <li><a href="{{ url('/defend') }}">Defend</a></li>
+                        @if(Auth::user() && Auth::user()->roles == '1')
                         <li><a href="{{ url('/country') }}">Country</a></li>
+                        @endif
                             <li class="dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -76,7 +78,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    <a class="dropdown-item" href="/profile/<?php echo e(Auth::user()->id); ?>">Edit Profile</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
