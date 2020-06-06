@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    if(Auth::user()->roles == '1' || Auth::user()->roles == '2'){
+    if(Auth::user()->roles == ''||Auth::user()->roles == '1' || Auth::user()->roles == '2'){
         return redirect()->back();
     }
     else{
