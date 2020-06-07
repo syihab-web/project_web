@@ -38,10 +38,9 @@
         @method('patch')
         @csrf
         <div class="wrapper">
-        <div class="image">
-            <img id="img" src="{{ asset('assets/Users/'.$user->image) }}">
-        </div>
-        
+            <div class="image">
+                <img id="img" src="{{ asset('assets/Users/'.$user->image) }}">
+            </div>
         <div class="form">
             <div class="form-group">
                 <label for="exampleInputEmail1">Image</label>

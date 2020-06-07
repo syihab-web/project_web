@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     if(!empty(Auth::user())){
-        return redirect('/infected');
+        return redirect('/home');
     }
     else{
         return view('auth.login');
