@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -22,6 +23,7 @@
     <link rel="stylesheet" href="{{URL('assets/css/fontawesome.min.css')}}"  crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <!-- Styles -->
     <link href="{!! asset('assets/css/layout.css') !!}" rel="stylesheet">
@@ -42,48 +44,49 @@
                         <div class="col-xl-7 col-lg-3">
                     <div class="main-menu d-none d-lg-block">
                     <nav>
+                        @guest
                         <ul id="navigation">
-                         @guest
-                         <li>
-                            <div class="login">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Account
-                                    </button>
-                                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
-                                        <a class="" href="{{ route('login') }}">Login</a>
-                                        @if (Route::has('register'))
-                                         <a class="" href="{{ route('register') }}">Register</a>
-                                      @endif
-                                    </div>
-                                  </div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li>
+                            <div class="auth">
+                                <div class="login">
+                                    <a class="boxed-btn" href="{{ route('login') }}">Login</a>
+                                    @if (Route::has('register'))
+                                     <a class="boxed-btn" href="{{ route('register') }}">Register</a>
+                                  @endif
+                                </div>
                             </div>
                         </li>
                         @else
-                        <li><a href="{{ url('/home') }}">home</a></li>
-                        <li><a href="{{ url('/pandemic') }}">Pandemic</a></li>
-                        <li><a href="{{ url('/infected') }}">Infected</a></li>
-                        <li><a href="{{ url('/defend') }}">Defend</a></li>
+                      
+                        <li class="napigation"><a href="{{ url('/') }}">home</a></li>
+                        <li class="napigation"><a href="{{ url('/pandemic') }}">Pandemic</a></li>
+                        <li class="napigation"><a href="{{ url('/infected') }}">Infected</a></li>
+                        <li class="napigation"><a href="{{ url('/defend') }}">Defend</a></li>
                         @if(Auth::user() && Auth::user()->roles == '1')
-                        <li><a href="{{ url('/country') }}">Country</a></li>
+                        <li class="napigation"><a href="{{ url('/country') }}">Country</a></li>
                         @endif
-                            <li class="dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                    
+                        <li class="dropdown grid-item">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <a class="dropdown-item" href="/profile/<?php echo e(Auth::user()->id); ?>">Edit Profile</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <a class="dropdown-item" href="/profile/<?php echo e(Auth::user()->id); ?>">Edit Profile</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                       
+                        </li>
+                    
+                  
+
                         @endguest
                                     </ul>
                                 </nav>
@@ -96,6 +99,7 @@
                 </div>
             </div>
         </div>
+        
     </header>
     <div>
         <main>
@@ -110,3 +114,4 @@
     </footer>
 </body>
 </html>
+

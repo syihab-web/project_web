@@ -78,6 +78,7 @@ i{
 .login{
     padding-bottom: 12px;
     text-decoration: none;
+   align-items: center;
 
 }
 
@@ -97,6 +98,7 @@ i{
     color: #131313;
     text-transform: uppercase;
     transform: 3s;
+    
 }
 
 .boxed-btn:hover{
@@ -148,6 +150,28 @@ a:-webkit-any-link{
     margin-right: 9px;
 }
 
+.auth{
+    letter-spacing: 40px;
+    position: relative;
+    padding-top: 20px;
+   
+}
+
+@media (width: 1366px){
+    .auth{
+        letter-spacing: 40px;
+        position: relative;
+        padding-top: 20px;
+        padding-left: 350px;
+    }
+}
+
+@media (width: 1920px){
+    .dropdown{
+        margin-left: 300px;
+    }
+}
+
 
 
 .boxed-btn2{
@@ -165,4 +189,30 @@ footer p{
     text-align: center;
     letter-spacing: 8px;
     color: black;
+}
+
+.grid-container{
+    display: grid;
+    grid-row-gap: 50px;
+    grid-template-columns: 20% 60% 20%;
+    padding: 10px;
+}
+
+
+
+.usah{
+    align-items: right;
+}
+
+.nap{
+    margin-left: 200px;
+}
+
+.napigation{
+    right: 40%;
+    
+}
+
+.napigation a{
+    text-decoration: none;
 }
